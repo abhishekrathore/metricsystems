@@ -1,0 +1,42 @@
+<html  ng-app="demo">
+    <head>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+   
+    <body>
+
+        <div ng-controller="demoCtrl as demo">
+
+            <!-- <div ng-repeat="d in demo.data">
+                {{d.baseUnit}}
+            </div> -->
+            <div>
+                <select name="" id="" ng-model="demo.lang" ng-options="l for l in demo.langs"></select>
+            </div>
+            <div>
+                <select name="" id="" ng-model="demo.type" ng-options="l for l in demo.conversions"></select>
+            </div>
+
+
+            <div ng-if="demo.type=='ayurveda to modern'">
+            <input type="text" ng-model="demo.input">
+            <select name="" id="" ng-model="demo.selected" ng-options="d.factor as d.baseUnit for d in demo.data[demo.lang]">
+
+            </select>
+
+            {{demo.calc()}} 
+            <select name="" id="" ng-model="demo.factor" ng-options="w.unit as w.name for w in demo.weights"></select>
+            </div>
+
+            <div ng-if="demo.type=='modern to ayurveda'">
+                Other Part
+            </div>
+        </div>
+   
+       
+    
+
+
+    </body>
+</html>
